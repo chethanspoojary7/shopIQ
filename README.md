@@ -24,8 +24,17 @@ python -m venv .venv && .venv/bin/pip install -r backend/requirements.txt
 cd frontend && npm install && npm run dev   # http://127.0.0.1:5173
 # or: npm run build && npm run preview
 ```
-Frontend API base: `VITE_API_BASE_URL` (default http://127.0.0.1:5000,
-see frontend/.env.example).
+Frontend API base: `VITE_API_BASE_URL` (default `/api`; Vite proxies it to
+the local Flask server, and Vercel routes it to the backend service).
+
+## Vercel deployment
+The root `vercel.json` defines separate `backend` (Flask) and `frontend`
+(Vite) services. `/api/*` is routed to Flask and all other paths to the
+frontend. The frontend calls the public `/api` path, so no service binding
+is needed; there are no backend-to-backend calls. The backend service uses
+the repository root because its Flask app depends on the shared `ml/` package
+and `artifacts/`; the required model artifacts are allowlisted in `.gitignore`
+and must be committed for deployments.
 
 ## API
 - `GET /api/health` — status, model loaded, version
@@ -52,7 +61,6 @@ see frontend/.env.example).
 `artifacts/` trained model + metrics (8.3 MB compressed joblib — Random Forest,
 200 trees), `reports/` report + comparison CSV + plots, `tests/` pytest.
 Raw dataset is in `data/raw/` for reproducibility in this delivery;
-`.gitignore` excludes venv, node_modules, and generated artifacts from
-version control by default — keep `artifacts/` locally to run the API
-without retraining.
+`.gitignore` excludes venv, node_modules, and generated artifacts, while
+allowing the model and metadata files required by the deployed API.
 # shopIQ

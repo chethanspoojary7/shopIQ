@@ -4,5 +4,10 @@ __pycache__/
 node_modules/
 frontend/dist/
 *.tsbuildinfo
-artifacts/
+artifacts/*
+!artifacts/best_model.joblib
+!artifacts/preprocessing_pipeline.joblib
+!artifacts/model_metadata.json
+!artifacts/evaluation_results.json
+!artifacts/analytics.json
 .env

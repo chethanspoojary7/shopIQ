@@ -1,16 +1,16 @@
-const BASE = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:5000';
+const BASE = import.meta.env.VITE_API_BASE_URL || '/api';
 async function get(path: string) {
   const r = await fetch(`${BASE}${path}`);
   if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error || `Request failed: ${r.status}`);
   return r.json();
 }
 export const api = {
-  health: () => get('/api/health'),
-  metadata: () => get('/api/metadata'),
-  metrics: () => get('/api/metrics'),
-  analytics: () => get('/api/analytics'),
+  health: () => get('/health'),
+  metadata: () => get('/metadata'),
+  metrics: () => get('/metrics'),
+  analytics: () => get('/analytics'),
   predict: async (session: any) => {
-    const r = await fetch(`${BASE}/api/predict`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ session }) });
+    const r = await fetch(`${BASE}/predict`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ session }) });
     const j = await r.json().catch(() => ({}));
     if (!r.ok) throw new Error(j.error || `Prediction failed: ${r.status}`);
     return j;

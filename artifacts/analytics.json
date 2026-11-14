@@ -1,0 +1,74 @@
+{
+  "total_sessions": 12330,
+  "purchase_sessions": 1908,
+  "non_purchase_sessions": 10422,
+  "purchase_rate": 0.15474452554744525,
+  "data_quality": {
+    "rows": 12330,
+    "columns": 18,
+    "missing_total": 0,
+    "missing_by_column": {},
+    "duplicate_rows": 125,
+    "target_counts": {
+      "False": 10422,
+      "True": 1908
+    },
+    "purchase_rate": 0.15474452554744525
+  },
+  "purchase_rate_by_month": {
+    "Aug": 0.17551963048498845,
+    "Dec": 0.1250723798494499,
+    "Feb": 0.016304347826086956,
+    "Jul": 0.1527777777777778,
+    "June": 0.10069444444444445,
+    "Mar": 0.10068169900367069,
+    "May": 0.10850178359096314,
+    "Nov": 0.25350233488992663,
+    "Oct": 0.20947176684881602,
+    "Sep": 0.19196428571428573
+  },
+  "purchase_rate_by_visitor": {
+    "New_Visitor": 0.24911452184179456,
+    "Other": 0.18823529411764706,
+    "Returning_Visitor": 0.1393232868922377
+  },
+  "purchase_rate_by_weekend": {
+    "False": 0.1489114352145424,
+    "True": 0.17398884239888424
+  },
+  "feature_means": {
+    "Administrative": 2.3151662611516626,
+    "Administrative_Duration": 80.81861053933592,
+    "Informational": 0.5035685320356853,
+    "Informational_Duration": 34.47239792772304,
+    "ProductRelated": 31.731467964314678,
+    "ProductRelated_Duration": 1194.7462199688268,
+    "BounceRates": 0.02219138047072182,
+    "ExitRates": 0.04307279776650446,
+    "PageValues": 5.889257862693593,
+    "SpecialDay": 0.061427412814274114,
+    "OperatingSystems": 2.124006488240065,
+    "Browser": 2.357096512570965,
+    "Region": 3.1473641524736413,
+    "TrafficType": 4.069586374695864
+  },
+  "pagevalues_mean_purchase": 27.264518194696016,
+  "pagevalues_mean_no_purchase": 1.9759977673701787,
+  "month_counts": {
+    "May": 3364,
+    "Nov": 2998,
+    "Mar": 1907,
+    "Dec": 1727,
+    "Oct": 549,
+    "Sep": 448,
+    "Aug": 433,
+    "Jul": 432,
+    "June": 288,
+    "Feb": 184
+  },
+  "visitor_counts": {
+    "Returning_Visitor": 10551,
+    "New_Visitor": 1694,
+    "Other": 85
+  }
+}
