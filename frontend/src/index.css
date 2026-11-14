@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Salesforce-reference system, adapted to ShopPredict.
+   Page: grey surround, pale-blue gradient inner card, black pill nav,
+   lime #d6f93c active tab, black bottom panel, lime detail button. */
+body { background: #b9b9b9; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color: #111; }
+.shell { max-width: 1180px; margin: 22px auto; background: linear-gradient(180deg, #dfeafb 0%, #eef3fb 38%, #ffffff 100%); border-radius: 18px; padding: 18px 22px 22px; box-shadow: 0 10px 40px rgba(0,0,0,.25); }
+.pillnav { background: #0d0d0d; border-radius: 999px; padding: 5px; display: flex; gap: 2px; align-items: center; }
+.pillnav button { border: 0; background: transparent; color: #cfcfcf; padding: 7px 14px; border-radius: 999px; font-size: 13px; cursor: pointer; }
+.pillnav button.active { background: #d6f93c; color: #111; font-weight: 700; }
+.iconbtn { width: 34px; height: 34px; border-radius: 999px; background: #fff; border: 1px solid #e2e2e2; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; }
+.statcard { background: #dbe7f8; border-radius: 20px; padding: 20px 22px; }
+.darkpanel { background: #0d0d0d; border-radius: 20px; padding: 14px; color: #fff; }
+.listrow { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 14px; cursor: pointer; border: 1px solid transparent; }
+.listrow.sel { background: #3a4a63; border-color: #5a6d8a; }
+.detail { background: #8fa3bd; border-radius: 16px; padding: 18px; color: #10203a; }
+.mini { background: rgba(255,255,255,.28); border-radius: 12px; padding: 12px; }
+input, select { width: 100%; background: #fff; color: #111; border: 1px solid #d5d5d5; border-radius: 10px; padding: 8px 10px; font-size: 14px; }
+label { font-size: 12px; font-weight: 600; color: #333; display: block; margin-bottom: 4px; }
+.btnlime { background: #d6f93c; color: #111; font-weight: 700; border: 0; border-radius: 999px; padding: 9px 16px; cursor: pointer; }
+.btnblack { background: #111; color: #fff; font-weight: 600; border: 0; border-radius: 999px; padding: 9px 16px; cursor: pointer; }
+.btnwhite { background: #fff; color: #111; font-weight: 600; border: 1px solid #ddd; border-radius: 999px; padding: 8px 14px; cursor: pointer; }
+.tabchip { border: 0; background: #222; color: #ccc; padding: 6px 12px; border-radius: 999px; font-size: 12px; cursor: pointer; }
+.tabchip.active { background: #d6f93c; color: #111; font-weight: 700; }
+@media (max-width: 900px) { .shell { margin: 8px; padding: 12px; } .pillnav button { padding: 6px 9px; font-size: 12px; } }
